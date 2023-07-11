@@ -1,0 +1,32 @@
+
+package lista.pkg3.exercicio.pkg1;
+
+
+public class CD extends Midia {
+    private int musicas;
+    
+    public CD(int codigo, double preco, String nome, int musicas){
+        super(codigo, preco,nome);
+        this.musicas = musicas;
+    }
+
+    
+    public int getMusicas() {
+        return musicas;
+    }
+
+    
+    public void setMusicas(int musicas) {
+        this.musicas = musicas;
+    }
+    
+    
+  @Override
+    public String toString(){
+        return "\nCodigo: " + super.codigo
+             + "\npreco: " +super.preco
+             + "\nnome: "+nome
+             + "\nNumero de musicas: "+musicas;
+        
+    }
+}
