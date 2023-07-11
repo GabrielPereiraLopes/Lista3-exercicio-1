@@ -1,0 +1,81 @@
+
+package lista.pkg3.exercicio.pkg1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Main {
+    
+    public static void main(String[] args) {
+        ArrayList<CD> Lista = new ArrayList<>(); 
+        ArrayList<DVD> Lista1 = new ArrayList<>(); 
+        Scanner sc = new Scanner(System.in);
+        int escolha ;
+        double preco;
+        
+        
+        do{
+            System.out.println("Digite a opcao desejada:"); 
+            System.out.println("0 - Sair do programa ");
+            System.out.println("1 -Verificar CD");
+            System.out.println("2 -Verificar DVD "); 
+            System.out.println("3 -Listar Todos as CDs");
+            System.out.println("4 -Listar Todos os DVDS");
+            escolha = sc.nextInt();
+            sc.nextLine();
+            
+            switch (escolha){
+                case 1 -> {
+                    System.out.println("Digite o codigo do CD:");
+                    int codigo = sc.nextInt();
+                    System.out.println("Digite o nome do CD:");
+                    sc.nextLine();
+                    String nome = sc.nextLine();
+                    System.out.println("Digite o preco do CD:");
+                    preco = sc.nextDouble();
+                    System.out.println("Digite o numero de faixas do CD:");
+                    int faixas = sc.nextInt();
+                    CD teste = new CD(codigo,preco,nome,faixas);
+                    Lista.add(teste);
+
+                    System.out.println("CD cadastrado! ");
+                    break;
+                    }
+
+                case 2 -> {   
+                     System.out.println("Digite o codigo do DVD:");
+                    int codigo = sc.nextInt();
+                    System.out.println("Digite o nome do DVD:");
+                    String nome = sc.nextLine();
+                    System.out.println("Digite o preco do DVD:");
+                    preco = sc.nextDouble();
+                    System.out.println("Digite o numero de musicas do DVD:");
+                    int musicas = sc.nextInt();
+                    CD teste = new CD(codigo,preco,nome,musicas);
+                    Lista.add(teste);
+
+                    System.out.println("CD cadastrado! ");
+                    break;
+                }
+                
+                case 3 -> {/// Listar motos
+                    for (CD i : Lista) {
+                        System.out.println(i);  
+                    }
+                    break; 
+            }
+            
+                case 4 -> {/// Listar carros
+                    for (DVD i : Lista1) {
+                        System.out.println(i);
+
+                    break;   
+                    }
+            }
+            }   
+
+        }while(escolha != 0);
+    
+}
+}
